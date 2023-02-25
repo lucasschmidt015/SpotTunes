@@ -13,18 +13,24 @@ export default function Player(){
     const audioRef = useRef(null);
 
     useEffect(() => {
-        function controlarBarraVolume(){
+        function controlVolumeBar(){
             var slider = document.getElementById("Campo")
-            console.log(slider);
-    
             var color = `linear-gradient(90deg,#6814FC ${volume * 100}%,#cac9c9 ${volume * 100}%)`
-            console.log(color)
-    
             slider.style.background = color;
         }
 
-        controlarBarraVolume();
+        controlVolumeBar();
     }, [volume]);
+
+    useEffect(() => {
+        function controlProgressBar(){
+            var slider = document.getElementById("progress")
+            var color = `linear-gradient(90deg,#6814FC ${currentTime}%,#cac9c9 ${currentTime}%)`
+            slider.style.background = color;
+        }
+
+        controlProgressBar();
+    }, [currentTime]);
     
 
     function onClickVolume(){
@@ -60,6 +66,7 @@ export default function Player(){
                     min="0"
                     max={audioRef.current ? audioRef.current.duration : 0}
                     value={currentTime}
+                    id="progress"
                     onChange={ (event) => (audioRef.current.currentTime = event.target.value)}
                 />
             </div>
@@ -81,7 +88,7 @@ export default function Player(){
                     <AiFillForward />
                 </div>
                 <div className='volume-area'>
-                    {volume === 0 ? (
+                    {volume == 0 ? (
                         <BsFillVolumeMuteFill onClick={() => setVolume(lastVolume !== 0 ? lastVolume : 0.5)}/>
                     ) : (
                         <BsVolumeDownFill onClick={onClickVolume}/>
