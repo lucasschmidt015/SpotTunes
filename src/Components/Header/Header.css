@@ -8,6 +8,10 @@
     height: 55px;
     background-color: #6814FC;
     color: #fff;    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 
@@ -46,7 +50,7 @@
     position: absolute;
     top: 55px;
     border-radius: 7px;
-    width: 150px;
+    width: 200px;
     height: 70px;
     right: 0;
     border: 1px solid #ddd;
@@ -59,7 +63,7 @@
     display: flex;
     width: 100%;
     align-items: center;
-    padding-left: 25%;
+    padding-left: 33%;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -91,5 +95,5 @@
 
 .component-exit-active {
     transform: scale(0);
-    transition: transform 200ms ease-in-out;
+    transition: transform 100ms ease-in-out;
 }

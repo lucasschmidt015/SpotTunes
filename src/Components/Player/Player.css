@@ -1,0 +1,104 @@
+.player-container{
+    position: fixed;
+    background-color: #EFEFEF;
+    height: 85px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #FFF;
+}
+
+.progress{
+    width: 100%;
+}
+
+.progress input{
+    width: 100%;
+}
+
+.container-player{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    font-weight: bold; 
+    color: #161616;
+}
+
+.container-player svg{
+    font-size: 28px;
+    margin: 0 5px;
+    transition: ease 0.3s;
+}
+
+.container-player svg:hover{
+    color: #6814FC;
+    font-size: 33px;
+    cursor: pointer;
+}
+
+.info-area{
+    display: flex;
+    height: 100%;
+    width: 33%;
+    padding: 20px 15px;
+    justify-content: space-between;
+}
+
+.info-area p:first-child{
+    color: #6814FC;
+}
+
+.buttons-area{
+    display: flex;
+    height: 100%;
+    width: 32%;
+    justify-content: center;
+    padding: 15px 0px;
+    color: #000;
+}
+
+.volume-area{
+    display: flex;
+    height: 100%;
+    width: 33%;
+    padding: 20px 0;
+    margin-left: 40px;
+    justify-content: center;
+    color: #000;
+}
+
+
+.volume-area input{
+    -webkit-appearance: none;
+    width: 40%;
+    height: 20px;
+    margin-top: 4px;
+    background:  linear-gradient(90deg,#6814FC 60%,#cac9c9 60%);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.volume-area input:hover{
+    opacity: 0.9;
+}
+
+.volume-area input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #6814FC;
+}
+
+.volume-area input::-moz-range-thumb{
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #6814FC;
+}
