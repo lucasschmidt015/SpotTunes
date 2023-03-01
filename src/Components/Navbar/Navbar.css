@@ -1,0 +1,38 @@
+.container-navbar{
+    width: 100%;
+    height: auto;
+    display: flex;
+    font-size: 16px;
+}
+
+.container-navbar h2{
+    width: 50%;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease 0.5s;
+}
+
+#search{
+    border-right: 1px solid rgb(202, 202, 202);
+    border-bottom: 1px solid rgb(202, 202, 202);
+    box-shadow: 10px 0 10px -10px #6814FC, 0 10px 10px -10px #6814FC;
+}
+
+
+#favorites{
+    border-left: 1px solid rgb(202, 202, 202);
+    border-bottom: 1px solid rgb(202, 202, 202);
+}
+
+#search:hover{
+    border-right: 1px solid #6814FC;
+    border-bottom: 1px solid #6814FC;
+    box-shadow: 10px 0 10px -10px #6814FC, 0 10px 10px -10px #6814FC;
+}
+
+#favorites:hover{
+    border-left: 1px solid #6814FC;
+    border-bottom: 1px solid #6814FC;
+    box-shadow: 0 10px 10px -10px #6814FC, -10px 0 10px -10px #6814FC;
+}

@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import DefaultPage from './Pages/DefaultPage';
+import SearchPage from "./Pages/SearchPage";
 
 export default function AllRoutes(){
     return(
         <Routes>
-            <Route path="/" element={<DefaultPage/>}/>
+            <Route path="/" element={<SearchPage/>}/>
         </Routes>
     );
 }

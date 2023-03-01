@@ -4,13 +4,16 @@ import { BrowserRouter } from "react-router-dom";
 import Header from './Components/Header'
 import Player from './Components/Player'
 
+import SpotfyProvider from "./Context/Spotfy";
 
 export default function App(){
   return(
-    <BrowserRouter>
-      <Header/>
-      <AllRoutes/>
-      <Player/>
-    </BrowserRouter>
+    <SpotfyProvider>
+      <BrowserRouter>
+        <Header/>
+        <AllRoutes/>
+        <Player/>
+      </BrowserRouter>  
+    </SpotfyProvider>    
   );
 }

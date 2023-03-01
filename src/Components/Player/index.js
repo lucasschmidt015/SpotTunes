@@ -1,8 +1,10 @@
 import './Player.css'
-import { useRef, useState, useEffect, useDebugValue } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
 import { AiFillBackward, AiFillForward, AiFillCaretRight } from 'react-icons/ai'
 import { BsFillPauseFill } from 'react-icons/bs'
 import { BsVolumeDownFill, BsFillVolumeMuteFill } from 'react-icons/bs';
+
+import { SpotfyContext } from '../../Context/Spotfy';
 
 export default function Player(){
     const [isPlaying, setIsPlaying] = useState(false)
@@ -11,6 +13,8 @@ export default function Player(){
     const [lastVolume, setLastVolume] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const audioRef = useRef(null);
+
+    const { Teste } = useContext(SpotfyContext);
 
     useEffect(() => {
         function controlVolumeBar(){
