@@ -1,11 +1,13 @@
 .content-searchpage{
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .search-result{
     width: 90%;
-    height: 100%;
+    height: auto;
     margin: 0 auto;
     padding-top: 20px;
     display: flex;
@@ -35,3 +37,70 @@
     font-size: 38px;
     color: #fff;
 }
+
+.registers{
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    width: 94%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.register{
+    width: 98%;
+    height: 50px;
+    margin: 15px auto;
+    border-radius: 4px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 15px;
+    transition: ease 0.3s;
+}
+
+.register:hover{
+    height: 53px;
+}
+
+.register svg {
+    color: #6814FC;
+    height: 35px;
+    width: 35px;
+    transition: ease 0.3s;
+}
+
+.register svg:hover {
+    height: 40px;
+    width: 40px;
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.register svg:last-child{
+    height: 30px;
+    width: 30px;
+    
+}
+
+.register svg:hover:last-child {
+    height: 35px;
+    width: 35px;
+}
+
+.register span{
+    font-weight: bold;
+    font-size: 15px;
+    width: 40%;
+    padding: 0 50px;
+}
+
+.default-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    font-size: 15px;
+}
+
