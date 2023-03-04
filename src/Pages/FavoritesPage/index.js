@@ -1,15 +1,10 @@
-import './SearchPage.css'
 import { useState } from 'react';
-
-import { BiSearch } from 'react-icons/bi'
 import Navbar from '../../Components/Navbar';
-
 import { BsFillPlayCircleFill } from 'react-icons/bs';
-import { AiFillPlusCircle } from 'react-icons/ai';
+import { IoMdTrash } from 'react-icons/io';
 
-export default function SearchPage(){
+export default function FavoritesPage(){
 
-    const [SearchText, setSearchText] = useState("");
     const [loading, setLoading] = useState(false); // this state is used to render a label loading while the request to fetch the songs is made
 
     const obj = [{
@@ -20,14 +15,6 @@ export default function SearchPage(){
         id: 2,
         name: 'The Night',
         artist: 'Avicii',
-    },{
-        id: 3,
-        name: 'Love Me Like You Do',
-        artist: 'Ellie Goulding',
-    },{
-        id: 4,
-        name: 'Smoke On The Water',
-        artist: 'Deep Purple',
     }]
 
     const [musics, setMusics] = useState(obj);
@@ -42,18 +29,7 @@ export default function SearchPage(){
 
     return(
         <div className='content-searchpage'>
-            <Navbar page="Search" />
-            <div className='search-result'>
-                <input
-                    type="text"
-                    placeholder='Type a music or artist'
-                    value={SearchText}
-                    onChange={(e) => setSearchText(e.target.value)}
-                />
-                <div className='button-search'>
-                    <BiSearch/>
-                </div>
-            </div>
+            <Navbar page="Favorites" />
             <div className='registers'>
                 {musics.length ? (
                     <>
@@ -62,14 +38,14 @@ export default function SearchPage(){
                                 <BsFillPlayCircleFill/>
                                 <span>{song.name}</span>
                                 <span>{song.artist}</span>
-                                <AiFillPlusCircle/>
+                                <IoMdTrash/>
                             </div>
                         ))}
                     </>
                         
                 ) : (
                     <div className='default-text'>
-                        <h2>Nothing here, type to search for your favorite song</h2>
+                        <h2>Nothing here</h2>
                     </div>
                 )}
                 

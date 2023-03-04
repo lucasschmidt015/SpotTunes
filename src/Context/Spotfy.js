@@ -1,15 +1,16 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const SpotfyContext = createContext({});
 
 
 function SpotfyProvider({children}){
-    const Teste = 'Lucas';
+    const [showAbout, setShowAbout] = useState(false);
 
     return (
         <SpotfyContext.Provider        
         value={{
-            Teste,
+            showAbout,
+            setShowAbout,
         }}>
             {children}
         </SpotfyContext.Provider>

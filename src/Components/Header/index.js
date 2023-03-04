@@ -5,14 +5,14 @@ import { ImExit } from 'react-icons/im'
 import { AiFillFileUnknown } from 'react-icons/ai'
 import { useState } from 'react';
 
-export default function Header(){
+export default function Header(props){
 
     const [showBackdown, setShowBackdown] = useState(false);
 
-    // function showBackdown(){
-        
-    // }
-
+    function hendleAbout(){
+        props.setRenderAbout(true);
+    }
+    
     return(
         <div className="header-container">
             <h2>SpotTunes</h2>
@@ -22,7 +22,7 @@ export default function Header(){
                 <img src={Img} alt="UserName" onClick={() => setShowBackdown(!showBackdown)}/>
                 <CSSTransition in={showBackdown} classNames="component" timeout={200} unmountOnExit>
                     <div className='dropdown' id='dropdown'>
-                        <div>
+                        <div onClick={hendleAbout}>
                             <AiFillFileUnknown/>
                             <p>About</p>
                         </div>
