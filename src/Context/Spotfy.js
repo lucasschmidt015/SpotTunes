@@ -4,13 +4,20 @@ export const SpotfyContext = createContext({});
 
 
 function SpotfyProvider({children}){
-    const [showAbout, setShowAbout] = useState(false);
+    const [isLoged, setIsLoged] = useState(false);
+    const [loading, setLoading] = useState(false);
+
+    function handleLogin(){
+        console.log("Hello World");
+    }
 
     return (
         <SpotfyContext.Provider        
         value={{
-            showAbout,
-            setShowAbout,
+            isLoged,
+            setIsLoged,
+            loading,
+            handleLogin,
         }}>
             {children}
         </SpotfyContext.Provider>

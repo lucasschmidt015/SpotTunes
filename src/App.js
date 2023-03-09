@@ -1,4 +1,4 @@
-import AllRoutes from "./Routes";
+import AllRoutes from "./Routes/Routes";
 import { BrowserRouter } from "react-router-dom";
 
 import Header from './Components/Header'

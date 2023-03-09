@@ -3,14 +3,24 @@ import { CSSTransition } from 'react-transition-group';
 import './Header.css'
 import { ImExit } from 'react-icons/im'
 import { AiFillFileUnknown } from 'react-icons/ai'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { SpotfyContext } from '../../Context/Spotfy';
 
 export default function Header(props){
 
     const [showBackdown, setShowBackdown] = useState(false);
 
+    const { isLoged } = useContext(SpotfyContext);
+
     function hendleAbout(){
         props.setRenderAbout(true);
+    }
+
+    if (!isLoged){
+        return(
+            <div>
+            </div>
+        );
     }
     
     return(

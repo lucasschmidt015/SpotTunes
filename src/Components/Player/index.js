@@ -14,7 +14,7 @@ export default function Player(){
     const [isPaused, setIsPaused] = useState(false);
     const audioRef = useRef(null);
 
-    const { Teste } = useContext(SpotfyContext);
+    const { isLoged } = useContext(SpotfyContext);
 
     useEffect(() => {
         function controlVolumeBar(){
@@ -23,7 +23,9 @@ export default function Player(){
             slider.style.background = color;
         }
 
-        controlVolumeBar();
+        if (isLoged){
+            controlVolumeBar();
+        }
     }, [volume]);
 
     useEffect(() => {
@@ -33,8 +35,18 @@ export default function Player(){
             slider.style.background = color;
         }
 
-        controlProgressBar();
+        if (isLoged){
+            controlProgressBar();
+        }
     }, [currentTime]);
+
+
+    if (!isLoged){
+        return(
+            <div>
+            </div>
+        );
+    }
     
 
     function onClickVolume(){
@@ -60,7 +72,6 @@ export default function Player(){
         setVolume(event.target.value);
         audioRef.current.volume = event.target.value;
     }
-
 
     return(
         <div className='player-container'>

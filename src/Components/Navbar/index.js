@@ -24,7 +24,7 @@ export default function Navbar(props){
 
     return(
         <div className='container-navbar'>
-            <h2 onClick={() => Navegate('/')} id="search">Search</h2>
+            <h2 onClick={() => Navegate('/dashboard')} id="search">Search</h2>
             <h2 onClick={() => Navegate('/favorites')} id="favorites">Favorites</h2>
         </div>
     );
